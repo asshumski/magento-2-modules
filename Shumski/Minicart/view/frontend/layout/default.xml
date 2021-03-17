@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright ©  All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="minicart">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Shumski_Minicart::cart/minicart.phtml</argument>
+            </action>
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="minicart_content" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="is_slide" xsi:type="helper" helper="Shumski\Minicart\Helper\Data::getIsSlide" />
+                                <item name="is_auto_open" xsi:type="helper" helper="Shumski\Minicart\Helper\Data::getIsAutoOpen" />
+                                <item name="template" xsi:type="helper" helper="Shumski\Minicart\Helper\Data::getTemplate">
+                                    <param name="slide_template">Shumski_Minicart/minicart/slide-content</param>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
